@@ -1,183 +1,180 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Millennia MMA — Membership Pricing</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Millennia MMA — Membership Pricing & Schedule</title>
   <style>
-    body { font-family: Arial, Helvetica, sans-serif; padding: 24px; line-height: 1.4; }
-    h1 { margin-bottom: 0.25rem; }
-    h2 { margin-top: 2rem; }
-    table { border-collapse: collapse; width: 100%; max-width: 720px; }
-    th, td { border: 1px solid #ddd; padding: 10px; }
-    th { background: #f2f2f2; text-align: left; }
-    caption { text-align: left; font-weight: bold; margin: 0 0 8px 0; }
-    .note { font-size: 0.95rem; color: #333; margin: 0.4rem 0; }
-    .wrap { max-width: 760px; }
-    .muted { color: #666; }
+    /* ========= Base ========= */
     :root{
-    --ink:#222;
-    --muted:#666;
-    --line:#d9d9d9;
-    --edge:#111;
-    --accent:#ffe666; /* yellow highlights in original */
-  }
-  *{box-sizing:border-box}
-  body{
-    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    color:var(--ink);
-    margin:0;
-    background:#fff;
-  }
-  .page{
-    max-width:1100px;
-    margin:42px auto 80px;
-    padding:0 18px;
-  }
-  header{
-    text-align:center;
-    margin-bottom:18px;
-  }
-  header .campus{
-    font-weight:700;
-    letter-spacing:.2px;
-  }
-  header .addr{
-    color:var(--muted);
-    font-size:.95rem;
-    line-height:1.35;
-    margin-top:6px;
-  }
-  h1{
-    text-align:center;
-    font-size:1.1rem;
-    letter-spacing:.08em;
-    margin:18px 0 10px;
-    font-weight:800;
-  }
+      --ink:#222;
+      --muted:#666;
+      --line:#d9d9d9;
+      --edge:#111;
+      --accent:#ffe666;
+    }
+    *{ box-sizing:border-box; }
+    body{
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      color:var(--ink);
+      margin:0;
+      background:#fff;
+      line-height:1.45;
+    }
+    h1{ margin:0 0 .25rem; font-size:1.75rem; }
+    h2{ margin:2rem 0 .25rem; }
+    h3{ margin:.25rem 0 1rem; color:var(--muted); font-weight:600; }
+    .muted{ color:var(--muted); }
+    .note{ font-size:.95rem; color:#333; margin:.4rem 0; }
 
-  .sheet{
-    border:3px solid var(--edge);
-    padding:18px 14px 14px;
-  }
+    /* ========= Pricing section (scoped) ========= */
+    .wrap{ max-width:760px; padding:24px; margin:0 auto; }
+    .pricing table{
+      border-collapse:collapse;
+      width:100%;
+    }
+    .pricing th, .pricing td{
+      border:1px solid #ddd;
+      padding:10px;
+      text-align:left;
+      vertical-align:middle;
+    }
+    .pricing th{ background:#f2f2f2; }
+    .pricing caption{
+      text-align:left;
+      font-weight:700;
+      margin:0 0 8px 0;
+    }
 
-  table{
-    width:100%;
-    border-collapse:separate;
-    border-spacing:0;
-    table-layout:fixed;
-    font-size:.9rem;
-  }
-  thead th{
-    background:#efefef;
-    text-transform:uppercase;
-    font-size:.8rem;
-    letter-spacing:.06em;
-  }
-  th, td{
-    border:1px solid var(--line);
-    padding:12px 10px;
-    vertical-align:middle;
-    text-align:center;
-  }
-  th.time{
-    width:110px;
-    font-weight:700;
-    background:#f8f8f8;
-  }
-  td{ line-height:1.15; }
-  .muted{ color:var(--muted); font-weight:600; letter-spacing:.02em;}
-  .hi{ background:var(--accent); font-weight:700; border-color:#e8d451; }
-  .note{ font-weight:700; }
-  .nowrap{ white-space:nowrap; }
-  footer{
-    margin-top:10px;
-    color:#000;
-    font-size:.85rem;
-    display:flex;
-    gap:10px;
-    justify-content:space-between;
-    align-items:center;
-    border-top:1px solid var(--line);
-    padding-top:8px;
-  }
-  footer a{ color:inherit; text-decoration:none; font-weight:700; }
-
-  /* Small screens: horizontal scroll for table, keep header visible */
-  .table-wrap{
-    overflow:auto;
-    border:1px solid var(--edge);
-  }
-  thead th{
-    position:sticky; top:0; z-index:2;
-  }
-  th.time{
-    position:sticky; left:0; z-index:3;
-  }
-
-  /* Very small text tweaks */
-  .small{ font-size:.82rem; }
+    /* ========= Schedule section (scoped) ========= */
+    .schedule{ max-width:1100px; margin:42px auto 80px; padding:0 18px 18px; }
+    .schedule header{ text-align:center; margin-bottom:18px; }
+    .schedule header .campus{ font-weight:700; letter-spacing:.2px; }
+    .schedule header .addr{ color:var(--muted); font-size:.95rem; line-height:1.35; margin-top:6px; }
+    .schedule h1{
+      text-align:center;
+      font-size:1.1rem;
+      letter-spacing:.08em;
+      margin:18px 0 10px;
+      font-weight:800;
+    }
+    .schedule .sheet{
+      border:3px solid var(--edge);
+      padding:18px 14px 14px;
+    }
+    .schedule .table-wrap{
+      overflow:auto; /* horizontal scroll on small screens */
+      border:1px solid var(--edge);
+    }
+    .schedule table{
+      width:100%;
+      border-collapse:separate;
+      border-spacing:0;
+      table-layout:fixed;
+      font-size:.9rem;
+      min-width:780px; /* ensures sticky cols behave nicely */
+    }
+    .schedule thead th{
+      background:#efefef;
+      text-transform:uppercase;
+      font-size:.8rem;
+      letter-spacing:.06em;
+      position:sticky; top:0; z-index:2;
+      text-align:center;
+    }
+    .schedule th, .schedule td{
+      border:1px solid var(--line);
+      padding:12px 10px;
+      vertical-align:middle;
+      text-align:center;
+      line-height:1.15;
+    }
+    .schedule th.time{
+      width:110px;
+      font-weight:700;
+      background:#f8f8f8;
+      position:sticky; left:0; z-index:3;
+    }
+    .schedule .hi{ background:var(--accent); font-weight:700; border-color:#e8d451; }
+    .schedule .nowrap{ white-space:nowrap; }
+    .schedule .small{ font-size:.82rem; }
+    .schedule footer{
+      margin-top:10px;
+      color:#000;
+      font-size:.85rem;
+      display:flex;
+      gap:10px;
+      justify-content:space-between;
+      align-items:center;
+      border-top:1px solid var(--line);
+      padding-top:8px;
+    }
+    .schedule footer a{ color:inherit; text-decoration:none; font-weight:700; }
   </style>
 </head>
 <body>
-<div class="wrap">
-  <h1>MIllennia MMA Membership Pricing</h1>
-  <p class="muted">Prices shown are USD.</p>
+  <!-- ===== Pricing ===== -->
+  <div class="wrap pricing">
+    <h1>Millennia MMA Membership Pricing</h1>
+    <p class="muted">Prices shown are USD.</p>
 
-  <h2>Adult</h2>
-  <h3>18yr and Up</h3>
-  <table aria-label="Adult membership pricing">
-    <tr><th>Plan</th><th>Price</th></tr>
-    <tr><td>Month to Month</td><td>$300</td></tr>
-    <tr><td>3yr Monthly</td><td>$155</td></tr>
-    <tr><td>2yr Monthly</td><td>$185</td></tr>
-    <tr><td>1yr Monthly</td><td>$205</td></tr>
-    <tr><td>6mo Monthly</td><td>$225</td></tr>
-    <tr><td>3mo (PIF)</td><td>$649</td></tr>
-    <tr><td>6mo (PIF)</td><td>$1,049</td></tr>
-    <tr><td>1yr (PIF)</td><td>$1,699</td></tr>
-    <tr><td>Registration Fee</td><td>$275 / $125 no gear</td></tr>
-  </table>
-  <p class="note">* Savings of $300 compared to 6mo monthly (for 6mo PIF).</p>
-  <p class="note">* Savings of $760 compared to 1yr monthly (for 1yr PIF).</p>
+    <h2>Adult</h2>
+    <h3>18yr and Up</h3>
+    <table aria-label="Adult membership pricing">
+      <tr><th>Plan</th><th>Price</th></tr>
+      <tr><td>Month to Month</td><td>$300</td></tr>
+      <tr><td>3yr Monthly</td><td>$155</td></tr>
+      <tr><td>2yr Monthly</td><td>$185</td></tr>
+      <tr><td>1yr Monthly</td><td>$205</td></tr>
+      <tr><td>6mo Monthly</td><td>$225</td></tr>
+      <tr><td>3mo (PIF)</td><td>$649</td></tr>
+      <tr><td>6mo (PIF)</td><td>$1,049</td></tr>
+      <tr><td>1yr (PIF)</td><td>$1,699</td></tr>
+      <tr><td>Registration Fee</td><td>$275 / $125 no gear</td></tr>
+    </table>
+    <p class="note">* Savings of $300 compared to 6mo monthly (for 6mo PIF).</p>
+    <p class="note">* Savings of $760 compared to 1yr monthly (for 1yr PIF).</p>
 
-  <h2>Kids</h2>
-  <h3>6yr to 17yr</h3>
-  <table aria-label="Kids membership pricing">
-    <tr><th>Plan</th><th>Price</th></tr>
-    <tr><td>Month to Month</td><td>$275</td></tr>
-    <tr><td>3yr Monthly</td><td>$135</td></tr>
-    <tr><td>2yr Monthly</td><td>$155</td></tr>
-    <tr><td>1yr Monthly</td><td>$175</td></tr>
-    <tr><td>6mo Monthly</td><td>$195</td></tr>
-    <tr><td>3mo (PIF)</td><td>$599</td></tr>
-    <tr><td>6mo (PIF)</td><td>$859</td></tr>
-    <tr><td>1yr (PIF)</td><td>$1,399</td></tr>
-    <tr><td>Registration Fee</td><td>$225 / $125 no gear</td></tr>
-  </table>
-  <p class="note">* Savings of $300 compared to 6mo monthly (for 6mo PIF).</p>
-  <p class="note">* Savings of $700 compared to 1yr monthly (for 1yr PIF).</p>
+    <h2>Kids</h2>
+    <h3>6yr to 17yr</h3>
+    <table aria-label="Kids membership pricing">
+      <tr><th>Plan</th><th>Price</th></tr>
+      <tr><td>Month to Month</td><td>$275</td></tr>
+      <tr><td>3yr Monthly</td><td>$135</td></tr>
+      <tr><td>2yr Monthly</td><td>$155</td></tr>
+      <tr><td>1yr Monthly</td><td>$175</td></tr>
+      <tr><td>6mo Monthly</td><td>$195</td></tr>
+      <tr><td>3mo (PIF)</td><td>$599</td></tr>
+      <tr><td>6mo (PIF)</td><td>$859</td></tr>
+      <tr><td>1yr (PIF)</td><td>$1,399</td></tr>
+      <tr><td>Registration Fee</td><td>$225 / $125 no gear</td></tr>
+    </table>
+    <p class="note">* Savings of $300 compared to 6mo monthly (for 6mo PIF).</p>
+    <p class="note">* Savings of $700 compared to 1yr monthly (for 1yr PIF).</p>
 
-  <h2>Little Samurai</h2>
-  <h3>3yr to 5yr</h3>
-  <table aria-label="Little Samurai membership pricing">
-    <tr><th>Plan</th><th>Price</th></tr>
-    <tr><td>Month to Month</td><td>$165</td></tr>
-    <tr><td>1yr Monthly</td><td>$109</td></tr>
-    <tr><td>6mo Monthly</td><td>$135</td></tr>
-    <tr><td>Registration Fee</td><td>$225 / $125 no gear</td></tr>
-  </table>
-<h2>20% discount</h2>
-  <table aria-label="20 percent discount">
-    <tr><td>Law enforcement</td></tr>
-    <tr><td>Military</td></tr>
-    <tr><td>First Responders</td></tr>
-  </table>
+    <h2>Little Samurai</h2>
+    <h3>3yr to 5yr</h3>
+    <table aria-label="Little Samurai membership pricing">
+      <tr><th>Plan</th><th>Price</th></tr>
+      <tr><td>Month to Month</td><td>$165</td></tr>
+      <tr><td>1yr Monthly</td><td>$109</td></tr>
+      <tr><td>6mo Monthly</td><td>$135</td></tr>
+      <tr><td>Registration Fee</td><td>$225 / $125 no gear</td></tr>
+    </table>
 
-  <h2>Black Belt Package  $8499</h2>
-  <p class="muted">Notes: PIF = Pay in Full.</p>
-</div>
-<div class="page">
+    <h2>20% discount</h2>
+    <table aria-label="20 percent discount">
+      <tr><td>Law enforcement</td></tr>
+      <tr><td>Military</td></tr>
+      <tr><td>First Responders</td></tr>
+    </table>
+
+    <h2>Black Belt Package &nbsp; $8,499</h2>
+    <p class="muted">Notes: PIF = Pay in Full.</p>
+  </div>
+
+  <!-- ===== Schedule ===== -->
+  <div class="schedule">
     <header>
       <div class="campus">Rancho Cucamonga (HQ)</div>
       <div class="addr">
@@ -206,15 +203,10 @@
           <tbody>
             <tr>
               <th class="time">9 – 10 AM</th>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td></td><td></td><td></td><td></td><td></td>
               <td>BJJ Fundamentals</td>
               <td>No Gi Fundamentals</td>
             </tr>
-
             <tr>
               <th class="time">9 – 10:30 AM</th>
               <td>No Gi Jiu Jitsu</td>
@@ -222,22 +214,23 @@
               <td>No Gi Jiu Jitsu</td>
               <td>Brazilian Jiu Jitsu</td>
               <td>Brazilian Jiu Jitsu</td>
-              <td></td>
+              <td></td><td></td>
             </tr>
-
             <tr>
               <th class="time">10 – 11 AM</th>
-              <td></td><td></td><td></td><td></td><td></td><td></td><td><div>Striking Fundamentals</div>
-                <div>No Gi Jiu Jitsu</div></td>
+              <td></td><td></td><td></td><td></td><td></td>
+              <td></td>
+              <td>
+                <div>Striking Fundamentals</div>
+                <div>No Gi Jiu Jitsu</div>
+              </td>
             </tr>
-
             <tr>
               <th class="time">10 – 12 PM</th>
               <td></td><td></td><td></td><td></td><td></td>
               <td>No Gi Jiu Jitsu</td>
               <td></td>
             </tr>
-
             <tr>
               <th class="time">10:30 – 11:30 AM</th>
               <td>Intermediate Wrestling</td>
@@ -245,15 +238,12 @@
               <td>Intermediate Wrestling</td>
               <td>BJJ Fundamentals</td>
               <td>BJJ Fundamentals</td>
-              <td></td>
-              <td></td>
+              <td></td><td></td>
             </tr>
-
             <tr>
               <th class="time">11 – 12:30 PM</th>
               <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
             </tr>
-
             <tr>
               <th class="time">11:30 AM – 12:30 PM</th>
               <td>
@@ -276,18 +266,14 @@
               <td>Striking Fundamentals</td>
               <td></td>
             </tr>
-
             <tr>
               <th class="time">12:30 – 1:30 PM</th>
               <td></td>
               <td>Striking Fundamentals</td>
               <td></td>
               <td>Striking Fundamentals</td>
-              <td></td>
-              <td></td>
-              <td></td>
+              <td></td><td></td><td></td>
             </tr>
-
             <tr>
               <th class="time">12:30 – 2 PM</th>
               <td><span class="note">*</span>Pro MMA Small Gloves<br/>Sparring</td>
@@ -298,53 +284,33 @@
               <td><span class="note">*</span>Pro MMA Big Gloves<br/>Sparring</td>
               <td></td>
             </tr>
-
             <tr>
               <th class="time">5 – 6 PM</th>
               <td>Intermediate MMA<br/><span class="hi">Wrestling (Kids)</span></td>
               <td>Striking Fundamentals<br/><span class="hi">Intermediate Wrestling (Adult)</span></td>
               <td>Intermediate MMA<br/><span class="hi">Wrestling (Kids)</span></td>
               <td>Striking Fundamentals</td>
-              <td class="hi">Intermediate MMA <br>Intermediate Wrestling (Adult)</td>
-              <td></td>
+              <td class="hi">Intermediate MMA</td>
+              <td class="hi">Intermediate Wrestling (Adult)</td>
               <td></td>
             </tr>
-
             <tr>
               <th class="time">6 – 7 PM</th>
-              <td>
-                <div>Striking: Sparring</div>
-                <div>Striking Fundamentals</div>
-              </td>
-              <td>
-                <div>Intermediate MMA</div>
-                <div>BJJ Fundamentals</div>
-              </td>
-              <td>
-                <div>Striking: Sparring</div>
-                <div>Striking Fundamentals</div>
-              </td>
-              <td>
-                <div>Intermediate MMA</div>
-                <div>BJJ Fundamentals</div>
-              </td>
+              <td><div>Striking: Sparring</div><div>Striking Fundamentals</div></td>
+              <td><div>Intermediate MMA</div><div>BJJ Fundamentals</div></td>
+              <td><div>Striking: Sparring</div><div>Striking Fundamentals</div></td>
+              <td><div>Intermediate MMA</div><div>BJJ Fundamentals</div></td>
               <td class="hi">Intermediate No Gi</td>
-              <td></td>
-              <td></td>
+              <td></td><td></td>
             </tr>
-
             <tr>
               <th class="time">7 – 8:30 PM</th>
               <td>No Gi Jiu Jitsu</td>
-              <td>
-                Brazilian Jiu Jitsu<br/>
-                <span class="note">*</span><span class="small">High School Wrestling Club</span>
-              </td>
+              <td>Brazilian Jiu Jitsu<br/><span class="note">*</span><span class="small">High School Wrestling Club</span></td>
               <td>No Gi Jiu Jitsu</td>
               <td>Intermediate BJJ</td>
               <td><span class="note">*</span><span class="small">High School Wrestling Club</span></td>
-              <td></td>
-              <td></td>
+              <td></td><td></td>
             </tr>
           </tbody>
         </table>
