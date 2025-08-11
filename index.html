@@ -15,6 +15,108 @@
     .note { font-size: 0.95rem; color: #333; margin: 0.4rem 0; }
     .wrap { max-width: 760px; }
     .muted { color: #666; }
+    :root{
+    --ink:#222;
+    --muted:#666;
+    --line:#d9d9d9;
+    --edge:#111;
+    --accent:#ffe666; /* yellow highlights in original */
+  }
+  *{box-sizing:border-box}
+  body{
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+    color:var(--ink);
+    margin:0;
+    background:#fff;
+  }
+  .page{
+    max-width:1100px;
+    margin:42px auto 80px;
+    padding:0 18px;
+  }
+  header{
+    text-align:center;
+    margin-bottom:18px;
+  }
+  header .campus{
+    font-weight:700;
+    letter-spacing:.2px;
+  }
+  header .addr{
+    color:var(--muted);
+    font-size:.95rem;
+    line-height:1.35;
+    margin-top:6px;
+  }
+  h1{
+    text-align:center;
+    font-size:1.1rem;
+    letter-spacing:.08em;
+    margin:18px 0 10px;
+    font-weight:800;
+  }
+
+  .sheet{
+    border:3px solid var(--edge);
+    padding:18px 14px 14px;
+  }
+
+  table{
+    width:100%;
+    border-collapse:separate;
+    border-spacing:0;
+    table-layout:fixed;
+    font-size:.9rem;
+  }
+  thead th{
+    background:#efefef;
+    text-transform:uppercase;
+    font-size:.8rem;
+    letter-spacing:.06em;
+  }
+  th, td{
+    border:1px solid var(--line);
+    padding:12px 10px;
+    vertical-align:middle;
+    text-align:center;
+  }
+  th.time{
+    width:110px;
+    font-weight:700;
+    background:#f8f8f8;
+  }
+  td{ line-height:1.15; }
+  .muted{ color:var(--muted); font-weight:600; letter-spacing:.02em;}
+  .hi{ background:var(--accent); font-weight:700; border-color:#e8d451; }
+  .note{ font-weight:700; }
+  .nowrap{ white-space:nowrap; }
+  footer{
+    margin-top:10px;
+    color:#000;
+    font-size:.85rem;
+    display:flex;
+    gap:10px;
+    justify-content:space-between;
+    align-items:center;
+    border-top:1px solid var(--line);
+    padding-top:8px;
+  }
+  footer a{ color:inherit; text-decoration:none; font-weight:700; }
+
+  /* Small screens: horizontal scroll for table, keep header visible */
+  .table-wrap{
+    overflow:auto;
+    border:1px solid var(--edge);
+  }
+  thead th{
+    position:sticky; top:0; z-index:2;
+  }
+  th.time{
+    position:sticky; left:0; z-index:3;
+  }
+
+  /* Very small text tweaks */
+  .small{ font-size:.82rem; }
   </style>
 </head>
 <body>
@@ -75,5 +177,185 @@
   <h2>Black Belt Package  $8499</h2>
   <p class="muted">Notes: PIF = Pay in Full.</p>
 </div>
+<div class="page">
+    <header>
+      <div class="campus">Rancho Cucamonga (HQ)</div>
+      <div class="addr">
+        8423 Rochester Ave #102<br />
+        Rancho Cucamonga, CA 91730
+      </div>
+    </header>
+
+    <h1>MILLENNIA MMA HQ SCHEDULE</h1>
+
+    <div class="sheet">
+      <div class="table-wrap">
+        <table aria-describedby="schedule">
+          <thead>
+            <tr>
+              <th class="time">Time</th>
+              <th>Monday</th>
+              <th>Tuesday</th>
+              <th>Wednesday</th>
+              <th>Thursday</th>
+              <th>Friday</th>
+              <th>Saturday</th>
+              <th>Sunday</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th class="time">9 – 10 AM</th>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td></td>
+              <td>BJJ Fundamentals</td>
+              <td>No Gi Fundamentals</td>
+            </tr>
+
+            <tr>
+              <th class="time">9 – 10:30 AM</th>
+              <td>No Gi Jiu Jitsu</td>
+              <td>Brazilian Jiu Jitsu</td>
+              <td>No Gi Jiu Jitsu</td>
+              <td>Brazilian Jiu Jitsu</td>
+              <td>Brazilian Jiu Jitsu</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="time">10 – 11 AM</th>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td><div>Striking Fundamentals</div>
+                <div>No Gi Jiu Jitsu</div></td>
+            </tr>
+
+            <tr>
+              <th class="time">10 – 12 PM</th>
+              <td></td><td></td><td></td><td></td><td></td>
+              <td>No Gi Jiu Jitsu</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="time">10:30 – 11:30 AM</th>
+              <td>Intermediate Wrestling</td>
+              <td>BJJ Fundamentals</td>
+              <td>Intermediate Wrestling</td>
+              <td>BJJ Fundamentals</td>
+              <td>BJJ Fundamentals</td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="time">11 – 12:30 PM</th>
+              <td></td><td></td><td></td><td></td><td></td><td></td><td></td>
+            </tr>
+
+            <tr>
+              <th class="time">11:30 AM – 12:30 PM</th>
+              <td>
+                <div>Advanced MMA Drilling</div>
+                <div class="muted">Intermediate No Gi</div>
+              </td>
+              <td>
+                <div>Striking: Sparring</div>
+                <div class="muted">Intermediate BJJ</div>
+              </td>
+              <td>
+                <div>Advanced MMA Drilling</div>
+                <div class="muted">Intermediate No Gi</div>
+              </td>
+              <td>
+                <div>Striking: Sparring</div>
+                <div class="muted">Intermediate BJJ</div>
+              </td>
+              <td>Striking Fundamentals</td>
+              <td>Striking Fundamentals</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="time">12:30 – 1:30 PM</th>
+              <td></td>
+              <td>Striking Fundamentals</td>
+              <td></td>
+              <td>Striking Fundamentals</td>
+              <td></td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="time">12:30 – 2 PM</th>
+              <td><span class="note">*</span>Pro MMA Small Gloves<br/>Sparring</td>
+              <td></td>
+              <td><span class="note">*</span>Pro MMA Big Gloves<br/>Sparring</td>
+              <td></td>
+              <td><span class="note">*</span>No Gi Comp Class</td>
+              <td><span class="note">*</span>Pro MMA Big Gloves<br/>Sparring</td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="time">5 – 6 PM</th>
+              <td>Intermediate MMA<br/><span class="hi">Wrestling (Kids)</span></td>
+              <td>Striking Fundamentals<br/><span class="hi">Intermediate Wrestling (Adult)</span></td>
+              <td>Intermediate MMA<br/><span class="hi">Wrestling (Kids)</span></td>
+              <td>Striking Fundamentals</td>
+              <td class="hi">Intermediate MMA <br>Intermediate Wrestling (Adult)</td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="time">6 – 7 PM</th>
+              <td>
+                <div>Striking: Sparring</div>
+                <div>Striking Fundamentals</div>
+              </td>
+              <td>
+                <div>Intermediate MMA</div>
+                <div>BJJ Fundamentals</div>
+              </td>
+              <td>
+                <div>Striking: Sparring</div>
+                <div>Striking Fundamentals</div>
+              </td>
+              <td>
+                <div>Intermediate MMA</div>
+                <div>BJJ Fundamentals</div>
+              </td>
+              <td class="hi">Intermediate No Gi</td>
+              <td></td>
+              <td></td>
+            </tr>
+
+            <tr>
+              <th class="time">7 – 8:30 PM</th>
+              <td>No Gi Jiu Jitsu</td>
+              <td>
+                Brazilian Jiu Jitsu<br/>
+                <span class="note">*</span><span class="small">High School Wrestling Club</span>
+              </td>
+              <td>No Gi Jiu Jitsu</td>
+              <td>Intermediate BJJ</td>
+              <td><span class="note">*</span><span class="small">High School Wrestling Club</span></td>
+              <td></td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <footer>
+        <span>8423 Rochester Ave #102 Rancho Cucamonga, CA 91730</span>
+        <span class="nowrap">(951) 596-5583</span>
+        <a class="nowrap" href="https://www.millenniamma.com" target="_blank" rel="noopener">www.MILLENNIAMMA.com</a>
+      </footer>
+    </div>
+  </div>
 </body>
 </html>
